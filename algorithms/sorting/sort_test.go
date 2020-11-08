@@ -18,6 +18,7 @@ func TestSort(t *testing.T) {
 		bubbleSort,
 		insertionSort,
 		selectionSort,
+		mergeSort,
 	}
 
 	for _, sorting := range sortings {
