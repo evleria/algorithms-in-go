@@ -2,7 +2,7 @@ package sorting
 
 func mergeSort(nums []int) {
 
-	if len(nums) == 1 {
+	if len(nums) <= 1 {
 		return
 	}
 
