@@ -3,17 +3,15 @@ package sorting
 import (
 	"fmt"
 	"github.com/evleria/algorithms-in-go/utils"
+	"gotest.tools/v3/assert"
 	"sort"
 	"testing"
-
-	"gotest.tools/v3/assert"
 )
 
 type Sorting int
 
 const (
-	NotSorted Sorting = iota
-	Ascending
+	Ascending Sorting = iota + 1
 	Descending
 )
 
@@ -24,10 +22,10 @@ func TestSort(t *testing.T) {
 		len    int
 		sorted Sorting
 	}{
-		{from: 0, to: 0, len: 0, sorted: NotSorted},            // empty
-		{from: 0, to: 20, len: 1000, sorted: NotSorted},        // duplicates
-		{from: -1000, to: 1000, len: 1000, sorted: NotSorted},  // ordinary
-		{from: 0, to: 0, len: 50, sorted: NotSorted},           // all zeroes
+		{from: 0, to: 0, len: 0},                               // empty
+		{from: 0, to: 20, len: 1000},                           // duplicates
+		{from: -1000, to: 1000, len: 1000},                     // ordinary
+		{from: 0, to: 0, len: 50},                              // all zeroes
 		{from: -1000, to: 1000, len: 1000, sorted: Ascending},  // sorted asc
 		{from: -1000, to: 1000, len: 1000, sorted: Descending}, // sorted desc
 	}
@@ -37,6 +35,7 @@ func TestSort(t *testing.T) {
 		insertionSort,
 		selectionSort,
 		mergeSort,
+		quickSort,
 	}
 
 	for _, sorting := range sortings {
